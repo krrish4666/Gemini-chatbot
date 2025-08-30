@@ -1,14 +1,18 @@
-import os
 from google import genai
 
+# This script verifies the connection to the Gemini API using your environment's API key.
 
-client = genai.Client()
+try:
+    client = genai.Client()
 
-# Send a simple prompt
-resp = client.models.generate_content(
-    model="gemini-2.5-pro",   # you can also try "gemini-1.5-pro" for a stronger model
-    contents="Give a one-line greeting.",
-)
+    resp = client.models.generate_content(
+        model="gemini-1.5-pro-latest",
+        contents="Give a one-line greeting.",
+    )
 
-# Print output
-print(resp.text)
+    # Print output
+    print("✅ Connection successful! Gemini says:")
+    print(resp.text)
+
+except Exception as e:
+    print(f"❌ Test failed: {e}")
