@@ -1,22 +1,27 @@
+
 # ⚡ Gemini Streaming Chatbot
 
-A simple, interactive chatbot built with Python, Streamlit, and the Google Gemini API. This application provides a real-time, streaming chat experience and includes a user-friendly interface for interacting with Google's powerful language models.
+A simple, interactive chatbot built with Python, Streamlit, and the Google Gemini API. This application provides a chat interface with history and supports customization of Gemini models.
 
-
+---
 
 ## Features
 
--   **Real-time Streaming**: Responses from the Gemini API are streamed word-by-word for a dynamic user experience.
--   **Conversation History**: The app maintains and displays the full conversation history.
--   **Secure API Key Handling**: The app prioritizes using system environment variables for the API key, with a secure password input field as a fallback.
--   **Customizable Model**: Users can specify which Gemini model they want to use through the settings panel.
--   **Reset Chat**: A simple "Reset chat" button to clear the conversation history and start fresh.
+* **Interactive Chat**: Ask anything and get responses from Gemini.
+* **Conversation History**: Full chat history is preserved during a session.
+* **Secure API Key Handling**: Uses system environment variables for the API key, with a secure password input field as fallback.
+* **Customizable Model**: Choose your Gemini model (default: `gemini-2.5-pro`) via the settings panel.
+* **Reset Chat**: Clear the chat history and start fresh with one click.
+
+---
 
 ## Tech Stack
 
--   **Python**
---   **Streamlit**
--   **Google Gemini API** (`google-generativeai`)
+* **Python**
+* **Streamlit**
+* **Google Gemini API** (`google-generativeai`)
+
+---
 
 ## Setup and Installation
 
@@ -24,49 +29,54 @@ Follow these steps to run the application locally.
 
 ### Prerequisites
 
--   Python 3.8+
--   A Google Gemini API Key. You can get one from [Google AI Studio](https://aistudio.google.com/app/apikey).
+* Python 3.8+
+* A Google Gemini API Key from [Google AI Studio](https://aistudio.google.com/app/apikey).
 
 ### Steps
 
-1.  **Clone the Repository**
-    ```sh
-    git clone [https://github.com/krrish4666/Gemini-chatbot.git](https://github.com/krrish4666/Gemini-chatbot.git)
-    cd your-repo-name
-    ```
+1. **Clone the Repository**
 
-2.  **Create and Activate a Virtual Environment**
-    ```sh
-    # For macOS/Linux
-    python3 -m venv venv
-    source venv/bin/activate
+   ```sh
+   git clone https://github.com/krrish4666/Gemini-chatbot.git
+   cd Gemini-chatbot
+   ```
 
-    # For Windows
-    python -m venv venv
-    venv\Scripts\activate
-    ```
+2. **Install Dependencies**
+   Install all the required libraries directly (we’re not using `venv` here).
 
-3.  **Install Dependencies**
-    Install all the required libraries from the `requirements.txt` file.
-    ```sh
-    pip install -r requirements.txt
-    ```
+   ```sh
+   pip install -r requirements.txt
+   ```
 
-4.  **Set Your API Key**
-    For the best security, set your API key as a system environment variable named `GEMINI_API_KEY`.
+3. **Set Your API Key**
+   For the best security, set your Gemini API key as a system environment variable named `GEMINI_API_KEY`.
 
-    -   **macOS/Linux**:
-        ```sh
-        export GEMINI_API_KEY='your_api_key_here'
-        ```
-    -   **Windows (Command Prompt)**:
-        ```sh
-        set GEMINI_API_KEY=your_api_key_here
-        ```
-    Alternatively, you can run the app and paste the key into the password field in the sidebar.
+   * **macOS/Linux**:
 
-5.  **Run the Streamlit App**
-    ```sh
-    streamlit run app.py
-    ```
-    The application will open in your web browser.
+     ```sh
+     export GEMINI_API_KEY='your_api_key_here'
+     ```
+   * **Windows (Command Prompt)**:
+
+     ```sh
+     set GEMINI_API_KEY=your_api_key_here
+     ```
+   * **Windows (PowerShell)**:
+
+     ```sh
+     $env:GEMINI_API_KEY="your_api_key_here"
+     ```
+
+   👉 Alternatively, you can run the app and paste the key into the password field in the sidebar.
+
+4. **Run the Streamlit App**
+
+   ```sh
+   streamlit run app.py
+   ```
+
+   The application will automatically open in your web browser.
+
+---
+
+⚡ **That’s it!** You now have a working Gemini chatbot running on Streamlit.
