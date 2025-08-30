@@ -31,7 +31,7 @@ Follow these steps to run the application locally.
 
 1.  **Clone the Repository**
     ```sh
-    git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
+    git clone [https://github.com/krrish4666/Gemini-chatbot.git](https://github.com/krrish4666/Gemini-chatbot.git)
     cd your-repo-name
     ```
 
