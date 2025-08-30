@@ -37,30 +37,17 @@ if prompt := st.chat_input("Ask anything"):
         st.markdown(prompt)
 
     with st.chat_message("assistant"):
-        # Reformat the history for the Gemini API
-        api_history = []
-        for msg in st.session_state.messages:
-            # The API expects the role 'model' for the assistant's messages
-            role = "model" if msg["role"] == "assistant" else msg["role"]
-            api_history.append({"role": role, "parts": [{"text": msg["content"]}]})
-        
-       
-        *_, last_message = api_history
-        
         with st.spinner("Thinking..."):
-            # Initialize the model and generate content
-            gen_model = genai.GenerativeModel(model) # Initialize the model
-            stream = gen_model.generate_content(
-                api_history,
-                stream=True
+            # ✅ Streaming Gemini response
+            stream = client.models.generate_content_stream(
+                model=model,
+                contents=[m["content"] for m in st.session_state.messages]
             )
-            
             reply = ""
             placeholder = st.empty()
             for chunk in stream:
                 if chunk.text:
                     reply += chunk.text
-                    placeholder.markdown(reply + "▌") 
-            placeholder.markdown(reply)
+                    placeholder.markdown(reply)
 
     st.session_state.messages.append({"role": "assistant", "content": reply})
