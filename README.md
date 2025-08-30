@@ -69,7 +69,17 @@ Follow these steps to run the application locally.
 
    👉 Alternatively, you can run the app and paste the key into the password field in the sidebar.
 
-4. **Run the Streamlit App**
+### ✅ Run a Quick Test (Optional)
+
+Before launching the main application, you can run a simple script to verify your connection to the Gemini API.
+
+```sh
+python test_connection.py
+```
+
+If your environment and API key are set up correctly, you will see a success message and a greeting from the model.
+
+5. **Run the Streamlit App**
 
    ```sh
    streamlit run app.py
