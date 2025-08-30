@@ -1,0 +1,16 @@
+# Virtual Environment - Prevents uploading Gigabytes of library files
+venv/
+*.venv
+env/
+
+# Python cache files - Keeps the repository clean
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment variables file - CRITICAL for security
+.env
+
+# IDE and editor folders
+.vscode/
+.idea/
