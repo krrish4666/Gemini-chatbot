@@ -74,7 +74,7 @@ Follow these steps to run the application locally.
 Before launching the main application, you can run a simple script to verify your connection to the Gemini API.
 
 ```sh
-python test_connection.py
+python gemini_test.py
 ```
 
 If your environment and API key are set up correctly, you will see a success message and a greeting from the model.
